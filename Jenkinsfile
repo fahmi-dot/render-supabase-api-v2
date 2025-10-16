@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Docker Build & Push') {
       steps {
-        sh 'docker usr/bin/docker build -t ghcr.io/fahmi-dot/render-supabase-api-v2:latest .'
+        sh 'docker build -t ghcr.io/fahmi-dot/render-supabase-api-v2:latest .'
         sh 'echo $GHCR_TOKEN | docker login ghcr.io -u fahmi-dot --password-stdin'
         sh 'docker push ghcr.io/fahmi-dot/render-supabase-api-v2:latest'
       }
