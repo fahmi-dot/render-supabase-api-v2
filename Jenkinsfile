@@ -9,7 +9,7 @@ pipeline {
       steps { checkout scm }
     }
     stage('Build Maven') {
-      steps { sh './mvnw clean package -DskipTests' }
+      steps { sh 'mvn clean package -DskipTests' }
     }
     stage('Debug') {
       steps {
